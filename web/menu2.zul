@@ -18,22 +18,19 @@
     <borderlayout>
 
         <north height="110px" class="banner">
-        <div>
-            <div align="right">
-     <a style="font-size:10px" href="index.zul" >Terminar Sessao</a>
- </div>
-  <div  align="right">
-                        <a style="font-size:10px"  href="index.zul">Utilizador</a>             
-                                </div>
-                <hbox align="center">
-                    <a>
-                        <image src="esade.PNG"></image>
-                    </a> 
-                    <div>
-                        <label style="font-size:30px">Sistema de Avaliacao de Desempenho </label>
-                    </div>
-                </hbox>
-            </div> 
+       <div hflex="1" vflex="1" sclass="cabecalho">
+        <menupopup id="menu_utente_lista">
+            <menuitem image="/logout.png" id="logout" label="Sair" />
+        </menupopup>
+        <hbox hflex="1" vflex="1" align="center" style="background:#dfe8f6 url('../esade.PNG') no-repeat;">
+            
+            <hbox apply="controlpg.LogoutController" hflex="1" vflex="1" pack="end" align="end">
+                <button image="/account.png" label="Jose Tafula"
+                      
+                class="dropdown-toggle btn-primary" popup="menu_utente_lista, after_start"/>
+            </hbox>
+        </hbox>
+    </div> 
 
         </north>
         <west>

@@ -30,7 +30,7 @@ Users us=new Users();
 
     public UserCredential() {
         this.account = "anonymous";
-        this.name = "Usimani Maria";
+        this.name = "";
         roles.add("anonymous");
     }
 
