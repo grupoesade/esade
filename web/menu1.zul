@@ -1,0 +1,77 @@
+<?page title="menu" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" ?>
+<?link rel="stylesheet" type="text/css"
+    href="/bootstrap/v3/css/bootstrap.css" ?>
+    <?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<zk>
+    <script src="/bootstrap/zk/js/Button-bs.js"></script>
+        <script src="/bootstrap/zk/js/panel-bs.js"></script>  
+
+<style>
+.banner{
+background-color:#D1e2ec;
+color:#191970;
+padding:5px 10px;
+}
+
+</style>
+
+<borderlayout>
+
+<north height="110px" class="banner">
+ <div hflex="1" vflex="1" sclass="cabecalho">
+        <menupopup id="menu_utente_lista">
+            <menuitem image="/logout.png" id="logout" label="Sair" if="${not sessionScope.userCredential.anonymous}"/>
+        </menupopup>
+        <hbox hflex="1" vflex="1" align="center" style="background:#dfe8f6 url('../esade.PNG') no-repeat;">
+            
+            <hbox apply="controlpg.LogoutController" hflex="1" vflex="1" pack="end" align="end">
+                <button image="/account.png" label="${sessionScope.userCredential.name}"
+                      
+                class="dropdown-toggle btn-primary" popup="menu_utente_lista, after_start"/>
+            </hbox>
+        </hbox>
+    </div>
+
+</north>
+<west>
+    
+<div self="@{define(centro)}" apply="org.zkoss.bind.BindComposer" viewModel= "@id('vm') @init('controlpg.parametroestudante')">   
+<window title="Lista de docentes" border="normal" height="700px" >
+    <radiogroup onCheck="choice.value = self.selectedItem.label">  
+<listbox width="300px" height="400px" rows="5" mold="paging"  emptyMessage="Nao ha Docentes cadastrados." pageSize="7"
+                 model="@bind(vm.listadisc)" multiple="true"  > 
+            <listhead>
+                <listheader>Disciplina</listheader>
+                <listheader>Professor</listheader>
+                
+               
+            </listhead>
+            <template name="model">
+                <listitem>
+                    
+                                      
+                                         <listcell label="@load(each.nome)"></listcell>
+                                        <listcell label="@load(each.idprofessor.nome)"></listcell>
+                                        
+                </listitem>
+            </template>
+        </listbox>
+ </radiogroup> 
+ </window>
+  </div>
+
+</west>
+
+
+
+<center self="@insert(conteudo)" >
+
+</center>
+
+
+</borderlayout>
+
+
+</zk>
+ 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="e_sadePU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>modelo.Pontuacaoconjugada</class>
+    <class>modelo.Matricula</class>
+    <class>modelo.Estudante</class>
+    <class>modelo.Pontuacaodocenteestudante</class>
+    <class>modelo.Pontuacaosuperiorhierarquico</class>
+    <class>modelo.Questaodocentesuperior</class>
+    <class>modelo.Questaoautoavaliacao</class>
+    <class>modelo.Questaodocenteestudante</class>
+    <class>modelo.Departamento</class>
+    <class>modelo.Avaliacaodocenteestudante</class>
+    <class>modelo.Regime</class>
+    <class>modelo.Autoavaliacao</class>
+    <class>modelo.Grupo</class>
+    <class>modelo.Cargochefia</class>
+    <class>modelo.Parametroautoavaliacao</class>
+    <class>modelo.Avaliacaodocentesuperior</class>
+    <class>modelo.Roles</class>
+    <class>modelo.Professor</class>
+    <class>modelo.Usergrupo</class>
+    <class>modelo.Parametrodocenteestudante</class>
+    <class>modelo.Caracteristiquestaosuperior</class>
+    <class>modelo.Categoriaa</class>
+    <class>modelo.Disciplina</class>
+    <class>modelo.Users</class>
+    <class>modelo.Curso</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/integra"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="1906paul"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,118 @@
+<?page title="e-SADE" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css"
+    href="/bootstrap/v3/css/bootstrap.css" ?>
+    <?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<zk>
+  <script src="/bootstrap/zk/js/Button-bs.js"></script>
+        <script src="/bootstrap/zk/js/panel-bs.js"></script>
+
+
+ 
+
+<style>
+.banner{
+background-color:#D1e2ec;
+color:#191970;
+padding:5px 10px;
+}
+
+</style>
+
+<borderlayout>
+
+<north height="110px" class="banner">
+<div hflex="1" vflex="1" sclass="cabecalho">
+        <menupopup id="menu_utente_lista">
+            <menuitem image="/logout.png" id="logout" label="Sair" if="${not sessionScope.userCredential.anonymous}"/>
+        </menupopup>
+        <hbox hflex="1" vflex="1" align="center" style="background:#dfe8f6 url('../esade.PNG') no-repeat;">
+            
+            <hbox apply="controlpg.LogoutController" hflex="1" vflex="1" pack="end" align="end">
+                <button image="/account.png" label="${sessionScope.userCredential.name}"
+                      
+                class="dropdown-toggle btn-primary" popup="menu_utente_lista, after_start"/>
+            </hbox>
+        </hbox>
+    </div>
+ <!--<div >
+     <div align="right"  >
+     <a style="font-size:10px" href="index.zul" >Terminar Sessao</a>
+ </div>
+ <div  align="right">
+      Utilizador corrente     
+     <a style="font-size:10px"  >
+         <div  self="@define(conteudo)"  apply="org.zkoss.bind.BindComposer" viewModel= "@id('vm') @init('controlpg.Controlpg')">
+
+        
+             <listbox width="50px" height="30px" rows="5" mold="paging" emptyMessage="Nao ha Questoes cadastradas." pageSize="7"
+                      model="@bind(vm.prof1)"> 
+                 <listhead >
+                     <listheader></listheader>
+                   
+                    
+                 </listhead>
+                 <template name="model" sclass="panel-success">
+                     <listitem>
+    
+                         <listcell label="@load(each.nome)"></listcell>
+         
+       
+                     </listitem>
+                 </template>
+           
+             </listbox>
+          
+        
+         </div>
+     </a>              
+ </div>
+                <hbox align="center">
+                    <a>
+                        <image src="esade.PNG"></image>
+                    </a> 
+                    <div>
+                        <label style="font-size:30px">Sistema de Avaliacao de Desempenho</label>
+                    </div>
+                </hbox>
+            </div> -->
+
+</north>
+<west>
+<!--<div  self="@define(conteudo)"  apply="org.zkoss.bind.BindComposer" viewModel= "@id('vm') @init('controlpg.login')">
+
+        <window  >
+            <listbox width="1340px" height="400px" rows="5" mold="paging" emptyMessage="Nao ha Questoes cadastradas." pageSize="7"
+                     model="@bind(vm.prof1)"> 
+                <listhead >
+                    <listheader></listheader>
+                   
+                    
+                </listhead>
+                <template name="model" sclass="panel-success">
+                    <listitem>
+    
+                        <listcell label="@load(each.nome)"></listcell>
+         
+       
+                    </listitem>
+                </template>
+           
+            </listbox>
+          
+                </window>
+            </div>-->
+    
+ 
+        </west>
+
+
+
+        <center self="@insert(conteudo)" >
+
+        </center>
+
+
+    </borderlayout>
+
+
+</zk>
