@@ -39,7 +39,7 @@ public class Caracteristica extends SelectorComposer<Component> {
    
    @Wire
    private Window cadpauto;
-////Machauma/////////////////////////////////////////////////////////////
+////Machauma///////////////////////////alteracao na recorencia//////////////////////////////////
     @Wire
     Button up, guardar, add;
     @Wire
